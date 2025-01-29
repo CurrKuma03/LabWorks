@@ -1,0 +1,22 @@
+n = int(input("Введите количество строк (n): "))
+m = int(input("Введите количество столбцов (m): "))
+matrix = []
+
+for i in range(n):
+    row = list(map(int, input(f"Введите {m} элементов для строки {i+1} ,разделенных пробелом: ").split()))
+    matrix.append(row)
+
+print("Исходная матрица: ")
+for row in matrix:
+    print(row)
+
+def sort(matrix):
+    for i in range(len(matrix)):
+        matrix[i].sort()
+    return matrix
+
+sortedm = sort(matrix)
+
+print("Матрица с отсортированными строками:")
+for row in sortedm:
+    print(row)
