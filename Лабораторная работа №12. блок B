@@ -1,0 +1,8 @@
+def find_max():
+    num = int(input())
+    if num == 0:
+        return 0
+    else:
+        return max(num, find_max())
+
+print(find_max())
