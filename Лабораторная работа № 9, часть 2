@@ -1,0 +1,17 @@
+import numpy as np
+
+n = int(input("Введите количество строк (n): "))
+m = int(input("Введите количество столбцов (m): "))
+
+print("Введите элементы матрицы:")
+matrix = np.array([[int(input(f"Элемент [{i+1}][{j+1}]: ")) for j in range(m)] for i in range(n)])
+
+for i in range(n):
+    min_element = np.min(matrix[i])
+    if min_element % 2 == 0: 
+        matrix[i] = np.where(matrix[i] == min_element, 0, matrix[i])
+    else:
+        matrix[i] = np.where(matrix[i] == min_element, 1, matrix[i])
+
+print("Новая матрица:")
+print(matrix)
