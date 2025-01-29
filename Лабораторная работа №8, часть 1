@@ -1,0 +1,24 @@
+def x(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def y(a, b, c, d):
+    Z = b * d
+    F = a * d
+    D = c * b
+    num = F - D
+    denom = Z
+    div = x(abs(num), denom)
+    num //= div
+    denom //= div
+    return num, denom
+
+a = int(input("Введите числитель первой дроби (A): "))
+b = int(input("Введите знаменатель первой дроби (B): "))
+c = int(input("Введите числитель второй дроби (C): "))
+d = int(input("Введите знаменатель второй дроби (D): "))
+
+result1, result2 = y(a, b, c, d)
+
+print(f"Результат: {result1}/{result2}")
