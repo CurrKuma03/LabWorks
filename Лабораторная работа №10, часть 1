@@ -1,0 +1,21 @@
+def sort_matrix_rows(matrix):
+    return [sorted(row) for row in matrix]
+
+def read_matrix_from_file(filename):
+    with open(filename, 'r') as file:
+        return [list(map(int, line.split())) for line in file]
+
+def write_matrix_to_file(matrix, filename):
+    with open(filename, 'w') as file:
+        for row in matrix:
+            file.write(' '.join(map(str, row)) + ' ')
+
+input_filename = "Чернышев Никита Андреевич ЗИТ-241 vvod.txt"
+matrix = read_matrix_from_file(input_filename)
+
+sorted_matrix = sort_matrix_rows(matrix)
+
+output_filename = "Чернышев Никита Андреевич ЗИТ-241 vivod.txt"
+write_matrix_to_file(sorted_matrix, output_filename)
+
+print(f"Матрица успешно отсортирована и записана в файл {output_filename}")
