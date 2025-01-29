@@ -1,0 +1,5 @@
+from random import *
+x = [randint(1, 10) for i in range (10)]
+y = list(dict.fromkeys(x))
+print(x)
+print(y)
